@@ -23,7 +23,3 @@ enum class Shape : ShapeInterface {
         throw IllegalStateException("Shape is unknown to the rules")
     }
 }
-
-interface ShapeInterface {
-    fun winsAgainst(opponent: Shape): Boolean
-}
