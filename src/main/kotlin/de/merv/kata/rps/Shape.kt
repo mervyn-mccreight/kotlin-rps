@@ -14,7 +14,7 @@ enum class Shape : ShapeInterface {
         )
     }
 
-    override fun winAgainst(opponent: Shape): Boolean {
+    override infix fun winsAgainst(opponent: Shape): Boolean {
         val possibleLoser = winnersMap[this]
         if (possibleLoser != null) {
             return possibleLoser == opponent
@@ -25,5 +25,5 @@ enum class Shape : ShapeInterface {
 }
 
 interface ShapeInterface {
-    fun winAgainst(opponent: Shape): Boolean
+    fun winsAgainst(opponent: Shape): Boolean
 }

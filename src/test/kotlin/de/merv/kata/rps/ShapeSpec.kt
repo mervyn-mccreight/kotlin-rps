@@ -29,7 +29,7 @@ class ShapeSpec : BehaviorSpec({
                         row(Shape.SCISSORS, Shape.PAPER, true),
                         row(Shape.SCISSORS, Shape.SCISSORS, false)
                 ) { shapeOne, shapeTwo, expected ->
-                    shapeOne.winAgainst(shapeTwo) shouldBe expected
+                    shapeOne winsAgainst shapeTwo shouldBe expected
                 }
             }
         }
