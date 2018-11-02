@@ -7,7 +7,7 @@ This project uses [gradle](https://gradle.org/) as the build tool. If you do not
 
 ## Usage
 ### Building and running the JAR
-Run a `gradle clean build`, go to the `./build/libs` folder and execute the generated jar-file to run a simulation.
+Run a `gradle clean shadowJar` to build a fat-jar, go to the `./build/libs` folder and execute the generated jar-file to run a simulation.
 
 ### Invoking the main-method in an IDE
 Run `RPS::main`.

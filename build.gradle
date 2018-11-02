@@ -1,5 +1,6 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.2.51'
+    id 'com.github.johnrengelman.shadow' version '4.0.2'
 }
 
 group 'de.merv.kata'
@@ -33,9 +34,4 @@ jar {
     manifest {
         attributes 'Main-Class': 'de.merv.kata.rps.RPS'
     }
-
-    // This line of code recursively collects and copies all of a project's files
-    // and adds them to the JAR itself. One can extend this task, to skip certain 
-    // files or particular types at will
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
