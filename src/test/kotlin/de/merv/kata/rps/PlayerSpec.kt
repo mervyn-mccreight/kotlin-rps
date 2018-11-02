@@ -1,6 +1,5 @@
 package de.merv.kata.rps
 
-import io.kotlintest.properties.Gen
 import io.kotlintest.properties.forAll
 import io.kotlintest.specs.StringSpec
 
@@ -19,14 +18,5 @@ class PlayerSpec : StringSpec() {
                 chosenShape == shapeOne || chosenShape == shapeTwo
             }
         }
-    }
-}
-
-private class ShapeGenerator : Gen<Shape> {
-
-    override fun constants(): Iterable<Shape> = enumValues<Shape>().toList()
-
-    override fun random(): Sequence<Shape> = generateSequence {
-        enumValues<Shape>().toList().shuffled().first()
     }
 }
