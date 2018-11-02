@@ -13,5 +13,5 @@ Run a `gradle clean build`, go to the `./build/libs` folder and execute the gene
 Run `RPS::main`.
 
 ## Tests
-Run `gradle test` to run all tests.
+Run `gradle clean test` to run all tests using a clean build.
 
