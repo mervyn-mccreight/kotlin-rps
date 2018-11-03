@@ -4,8 +4,8 @@ object RPS {
 
     @JvmStatic
     fun main(args : Array<String>) {
-        val rockPlayer = { Shape.pickOneOf(Shape.ROCK) }
-        val randomPlayer = { Shape.pickOneOf(*enumValues()) }
+        val rockPlayer: Player = { Shape.pickOneOf(Shape.ROCK) }
+        val randomPlayer: Player = { Shape.pickOneOf(*enumValues()) }
 
         val (win, draw, loss) = Simulation.playGames(rockPlayer, randomPlayer)
 

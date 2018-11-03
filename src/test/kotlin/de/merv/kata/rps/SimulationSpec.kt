@@ -8,8 +8,8 @@ class SimulationSpec : StringSpec() {
     init {
         "A simulation of two players always picking the same shape should result in 100-draws" {
             assertAll(ShapeGenerator()) { shape: Shape ->
-                val playerOne = { Shape.pickOneOf(shape) }
-                val playerTwo = { Shape.pickOneOf(shape) }
+                val playerOne: Player = { Shape.pickOneOf(shape) }
+                val playerTwo: Player = { Shape.pickOneOf(shape) }
 
                 Simulation.playGames(playerOne, playerTwo) shouldBe Triple(0, 100, 0)
             }
