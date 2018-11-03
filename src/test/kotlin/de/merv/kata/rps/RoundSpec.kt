@@ -9,21 +9,27 @@ import io.kotlintest.tables.row
 
 class RoundSpec : StringSpec() {
 
+    companion object {
+        private val WIN = Triple(1, 0, 0)
+        private val DRAW = Triple(0, 1, 0)
+        private val LOSE = Triple(0, 0, 1)
+    }
+
     init {
         "A round with two equal shapes should always be evaluated as a draw" {
             assertAll(ShapeGenerator()) { shape ->
-                Round.play(shape, shape) shouldBe Triple(0, 1, 0)
+                Round.play(shape, shape) shouldBe DRAW
             }
         }
 
         "A round with a winner should evaluate according to the rules" {
             forall(
-                    row(ROCK, PAPER, Triple(0, 0, 1)),
-                    row(ROCK, SCISSORS, Triple(1, 0, 0)),
-                    row(PAPER, ROCK, Triple(1, 0, 0)),
-                    row(PAPER, SCISSORS, Triple(0, 0, 1)),
-                    row(SCISSORS, ROCK, Triple(0, 0, 1)),
-                    row(SCISSORS, PAPER, Triple(1, 0, 0))
+                    row(ROCK, PAPER, LOSE),
+                    row(ROCK, SCISSORS, WIN),
+                    row(PAPER, ROCK, WIN),
+                    row(PAPER, SCISSORS, LOSE),
+                    row(SCISSORS, ROCK, LOSE),
+                    row(SCISSORS, PAPER, WIN)
             ) { shapeOne, shapeTwo, expected ->
                 Round.play(shapeOne, shapeTwo) shouldBe expected
             }
