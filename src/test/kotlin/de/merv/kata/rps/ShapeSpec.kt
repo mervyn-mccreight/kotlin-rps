@@ -1,8 +1,6 @@
 package de.merv.kata.rps
 
 import io.kotlintest.data.forall
-import io.kotlintest.matchers.collections.containExactlyInAnyOrder
-import io.kotlintest.should
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.BehaviorSpec
 import io.kotlintest.tables.row
@@ -10,12 +8,6 @@ import io.kotlintest.tables.row
 class ShapeSpec : BehaviorSpec({
 
     given("Shapes") {
-        `when`("I gather all existing shapes") {
-            then("Exactly Rock, Paper and Scissors should exist") {
-                enumValues<Shape>().toList() should containExactlyInAnyOrder(Shape.ROCK, Shape.PAPER, Shape.SCISSORS)
-            }
-        }
-
         `when`("They play against each other") {
             then("They should win according to the rules") {
                 forall(
