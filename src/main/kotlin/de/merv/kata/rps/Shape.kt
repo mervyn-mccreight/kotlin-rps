@@ -11,6 +11,8 @@ enum class Shape : ShapeInterface {
                 PAPER to ROCK,
                 SCISSORS to PAPER
         )
+
+        fun pickOneOf(vararg shapes: Shape): Shape = shapes.toSet().shuffled().first()
     }
 
     override infix fun winsAgainst(opponent: Shape): Boolean {
