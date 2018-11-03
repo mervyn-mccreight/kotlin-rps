@@ -1,6 +1,6 @@
 package de.merv.kata.rps
 
-enum class Shape : ShapeInterface {
+enum class Shape {
     ROCK,
     PAPER,
     SCISSORS;
@@ -15,7 +15,7 @@ enum class Shape : ShapeInterface {
         fun pickOneOf(vararg shapes: Shape): Shape = shapes.toSet().shuffled().first()
     }
 
-    override infix fun winsAgainst(opponent: Shape): Boolean {
+    infix fun winsAgainst(opponent: Shape): Boolean {
         val possibleLoser = winnersMap[this]
         if (possibleLoser != null) {
             return possibleLoser == opponent
