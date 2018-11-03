@@ -1,13 +1,17 @@
 package de.merv.kata.rps
 
+import de.merv.kata.rps.Shape.Companion.pickOneOf
+import de.merv.kata.rps.Shape.ROCK
+import de.merv.kata.rps.Simulation.playGames
+
 object RPS {
 
     @JvmStatic
     fun main(args : Array<String>) {
-        val rockPlayer: Player = { Shape.pickOneOf(Shape.ROCK) }
-        val randomPlayer: Player = { Shape.pickOneOf(*enumValues()) }
+        val rockPlayer: Player = { pickOneOf(ROCK) }
+        val randomPlayer: Player = { pickOneOf(*enumValues()) }
 
-        val (win, draw, loss) = Simulation.playGames(rockPlayer, randomPlayer)
+        val (win, draw, loss) = playGames(rockPlayer, randomPlayer)
 
         println("Rock player wins = $win")
         println("Random player wins = $loss")

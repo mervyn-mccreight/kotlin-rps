@@ -1,5 +1,6 @@
 package de.merv.kata.rps
 
+import de.merv.kata.rps.Shape.*
 import io.kotlintest.be
 import io.kotlintest.data.forall
 import io.kotlintest.properties.assertAll
@@ -14,15 +15,15 @@ class ShapeSpec : BehaviorSpec({
         `when`("They play against each other") {
             then("They should win according to the rules") {
                 forall(
-                        row(Shape.ROCK, Shape.ROCK, false),
-                        row(Shape.ROCK, Shape.PAPER, false),
-                        row(Shape.ROCK, Shape.SCISSORS, true),
-                        row(Shape.PAPER, Shape.ROCK, true),
-                        row(Shape.PAPER, Shape.PAPER, false),
-                        row(Shape.PAPER, Shape.SCISSORS, false),
-                        row(Shape.SCISSORS, Shape.ROCK, false),
-                        row(Shape.SCISSORS, Shape.PAPER, true),
-                        row(Shape.SCISSORS, Shape.SCISSORS, false)
+                        row(ROCK, ROCK, false),
+                        row(ROCK, PAPER, false),
+                        row(ROCK, SCISSORS, true),
+                        row(PAPER, ROCK, true),
+                        row(PAPER, PAPER, false),
+                        row(PAPER, SCISSORS, false),
+                        row(SCISSORS, ROCK, false),
+                        row(SCISSORS, PAPER, true),
+                        row(SCISSORS, SCISSORS, false)
                 ) { shapeOne, shapeTwo, expected ->
                     shapeOne winsAgainst shapeTwo shouldBe expected
                 }

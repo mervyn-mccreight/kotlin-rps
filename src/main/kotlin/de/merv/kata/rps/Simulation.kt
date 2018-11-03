@@ -1,10 +1,12 @@
 package de.merv.kata.rps
 
+import de.merv.kata.rps.Round.play
+
 object Simulation {
 
     fun playGames(contender: Player, opponent: Player): Triple<Int, Int, Int> {
         val roundSequence = generateSequence {
-            Round.play(contender(), opponent())
+            play(contender(), opponent())
         }
 
         return roundSequence.take(100).reduce { acc, triple ->
