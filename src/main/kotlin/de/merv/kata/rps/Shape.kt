@@ -3,8 +3,7 @@ package de.merv.kata.rps
 enum class Shape : ShapeInterface {
     ROCK,
     PAPER,
-    SCISSORS,
-    ;
+    SCISSORS;
 
     companion object {
         private val winnersMap = hashMapOf(
