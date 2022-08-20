@@ -7,9 +7,9 @@ enum class Shape {
 
     companion object {
         private val winnersMap = hashMapOf(
-                ROCK to SCISSORS,
-                PAPER to ROCK,
-                SCISSORS to PAPER
+            ROCK to SCISSORS,
+            PAPER to ROCK,
+            SCISSORS to PAPER
         )
 
         fun pickOneOf(vararg shapes: Shape): Shape = shapes.toSet().shuffled().first()

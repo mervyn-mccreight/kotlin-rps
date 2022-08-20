@@ -1,13 +1,14 @@
 package de.merv.kata.rps
 
-import de.merv.kata.rps.Shape.*
-import io.kotlintest.data.forall
-import io.kotlintest.properties.assertAll
-import io.kotlintest.shouldBe
-import io.kotlintest.specs.StringSpec
-import io.kotlintest.tables.row
+import de.merv.kata.rps.Shape.PAPER
+import de.merv.kata.rps.Shape.ROCK
+import de.merv.kata.rps.Shape.SCISSORS
+import io.kotest.core.spec.style.FunSpec
+import io.kotest.datatest.withData
+import io.kotest.matchers.shouldBe
+import io.kotest.property.checkAll
 
-class RoundSpec : StringSpec() {
+class RoundSpec : FunSpec() {
 
     companion object {
         private val WIN = Triple(1, 0, 0)
@@ -16,22 +17,27 @@ class RoundSpec : StringSpec() {
     }
 
     init {
-        "A round with two equal shapes should always be evaluated as a draw" {
-            assertAll(ShapeGenerator()) { shape ->
+        test("A round with two equal shapes should always be evaluated as a draw") {
+            checkAll(shapeExhaustive) { shape ->
                 Round.play(shape, shape) shouldBe DRAW
             }
         }
 
-        "A round with a winner should evaluate according to the rules" {
-            forall(
-                    row(ROCK, PAPER, LOSE),
-                    row(ROCK, SCISSORS, WIN),
-                    row(PAPER, ROCK, WIN),
-                    row(PAPER, SCISSORS, LOSE),
-                    row(SCISSORS, ROCK, LOSE),
-                    row(SCISSORS, PAPER, WIN)
-            ) { shapeOne, shapeTwo, expected ->
-                Round.play(shapeOne, shapeTwo) shouldBe expected
+        context("A round with a winner should evaluate according to the rules") {
+            data class RulesTestCase(
+                val challenger: Shape,
+                val opponent: Shape,
+                val expectedResult: Triple<Int, Int, Int>
+            )
+            withData(
+                RulesTestCase(ROCK, PAPER, LOSE),
+                RulesTestCase(ROCK, SCISSORS, WIN),
+                RulesTestCase(PAPER, ROCK, WIN),
+                RulesTestCase(PAPER, SCISSORS, LOSE),
+                RulesTestCase(SCISSORS, ROCK, LOSE),
+                RulesTestCase(SCISSORS, PAPER, WIN)
+            ) { (challenger, opponent, expectedResult) ->
+                Round.play(challenger, opponent) shouldBe expectedResult
             }
         }
     }
