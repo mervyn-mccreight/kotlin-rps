@@ -1,11 +1,11 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.3.0'
-    id 'com.github.johnrengelman.shadow' version '4.0.2'
+    id 'org.jetbrains.kotlin.jvm' version '1.7.10'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'application'
 }
 
 group 'de.merv.kata'
-version '1.0-SNAPSHOT'
+version '1.0'
 mainClassName = 'de.merv.kata.rps.RPS'
 
 repositories {
@@ -21,9 +21,9 @@ test {
 }
 
 dependencies {
-    compile 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
-    compile "org.jetbrains.kotlin:kotlin-reflect:1.3.0"
-    testCompile 'io.kotlintest:kotlintest-runner-junit5:3.1.7'
+    testImplementation 'io.kotest:kotest-runner-junit5:5.4.2'
+    testImplementation 'io.kotest:kotest-property:5.4.2'
+    testImplementation 'io.kotest:kotest-framework-datatest:5.4.2'
 }
 
 compileKotlin {

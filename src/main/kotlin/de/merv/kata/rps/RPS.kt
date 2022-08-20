@@ -7,7 +7,7 @@ import de.merv.kata.rps.Simulation.playGames
 object RPS {
 
     @JvmStatic
-    fun main(args : Array<String>) {
+    fun main(args: Array<String>) {
         val rockPlayer: Player = { pickOneOf(ROCK) }
         val randomPlayer: Player = { pickOneOf(*enumValues()) }
 
