@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     kotlin("jvm") version "1.8.21"
     id("com.github.johnrengelman.shadow") version "7.1.2"
@@ -8,6 +6,10 @@ plugins {
 
 group = "de.merv.kata"
 version = "1.0"
+
+kotlin {
+    jvmToolchain(19)
+}
 
 application {
     mainClass.set("de.merv.kata.rps.RPS")
@@ -19,10 +21,6 @@ tasks.withType<Test> {
     testLogging {
         events("passed", "skipped", "failed")
     }
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
 }
 
 repositories {
