@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   test:
     runs-on: [ "ubuntu-latest" ]
@@ -17,6 +20,13 @@ jobs:
         with:
           distribution: "liberica"
           java-version: "19"
-      - uses: gradle/gradle-build-action@v2
+      - uses: gradle/gradle-build-action@v2.8.0
+        with:
+          dependency-graph: generate-and-submit
+      - name: "Publish dependency graph"
+        if: ${{ github.event_name == 'push' }}
+        run: "./gradlew dependencies"
       - name: "Test"
         run: "./gradlew test"
+        env:
+          GITHUB_DEPENDENCY_GRAPH_ENABLED: false
