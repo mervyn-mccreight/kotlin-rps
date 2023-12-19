@@ -25,6 +25,8 @@ jobs:
           dependency-graph: generate-and-submit
       - name: "Publish dependency graph"
         if: ${{ github.event_name == 'push' }}
+        env:
+          DEPENDENCY_GRAPH_INCLUDE_CONFIGURATIONS: runtimeClasspath
         run: "./gradlew dependencies"
       - name: "Test"
         run: "./gradlew test"
