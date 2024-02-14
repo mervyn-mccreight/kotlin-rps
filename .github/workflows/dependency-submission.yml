@@ -1,0 +1,16 @@
+name: Dependency Submission
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dependency-submission:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - uses: gradle/actions/setup-gradle@v3.1.0
+        with:
+          cache-read-only: true
+      - uses: gradle/actions/dependency-submission@v3.1.0
