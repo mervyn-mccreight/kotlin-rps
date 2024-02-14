@@ -8,11 +8,9 @@ on:
 jobs:
   update-gradle-wrapper:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/checkout@v4.1.1
+      - uses: gradle/actions/setup-gradle@v3.1.0
         with:
-          distribution: "liberica"
-          java-version: "19"
-      - uses: gradle-update/update-gradle-wrapper-action@v1
+          cache-read-only: true
+      - uses: gradle-update/update-gradle-wrapper-action@v1.0.9
