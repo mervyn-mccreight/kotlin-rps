@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.9.24"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.shadow)
     application
 }
 
@@ -28,7 +28,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation("io.kotest:kotest-runner-junit5:5.9.0")
-    testImplementation("io.kotest:kotest-property:5.9.0")
-    testImplementation("io.kotest:kotest-framework-datatest:5.9.0")
+    testImplementation(libs.kotest.runner.junit5)
+    testImplementation(libs.kotest.property)
+    testImplementation(libs.kotest.framework.datatest)
 }
