@@ -11,7 +11,7 @@ kotlin {
 }
 
 application {
-    mainClass.set("de.merv.kata.rps.RPS")
+    mainClass.set("de.merv.kata.rps.MainKt")
 }
 
 tasks.withType<Test> {
