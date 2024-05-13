@@ -6,7 +6,9 @@ import de.merv.kata.rps.Shape.SCISSORS
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.datatest.withData
 import io.kotest.matchers.shouldBe
+import io.kotest.property.Exhaustive
 import io.kotest.property.checkAll
+import io.kotest.property.exhaustive.enum
 
 class RoundSpec : FunSpec() {
 
@@ -18,7 +20,7 @@ class RoundSpec : FunSpec() {
 
     init {
         test("A round with two equal shapes should always be evaluated as a draw") {
-            checkAll(shapeExhaustive) { shape ->
+            checkAll(Exhaustive.enum()) { shape: Shape ->
                 Round.play(shape, shape) shouldBe DRAW
             }
         }

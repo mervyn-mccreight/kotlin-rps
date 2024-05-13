@@ -9,6 +9,8 @@ import io.kotest.matchers.be
 import io.kotest.matchers.or
 import io.kotest.matchers.should
 import io.kotest.matchers.shouldBe
+import io.kotest.property.Arb
+import io.kotest.property.arbitrary.enum
 import io.kotest.property.checkAll
 
 class ShapeSpec : FunSpec({
@@ -32,13 +34,13 @@ class ShapeSpec : FunSpec({
 
         context("One picks a random shape") {
             test("He always picks the same shape if the set of choices only contains one shape") {
-                checkAll(shapeArbitrary) { singleShape: Shape ->
+                checkAll(Arb.enum()) { singleShape: Shape ->
                     Shape.pickOneOf(singleShape) shouldBe singleShape
                 }
             }
 
             test("He always picks a shape out of the set of choices and nothing else") {
-                checkAll(shapeArbitrary, shapeArbitrary) { shapeOne: Shape, shapeTwo: Shape ->
+                checkAll(Arb.enum(), Arb.enum()) { shapeOne: Shape, shapeTwo: Shape ->
                     Shape.pickOneOf(shapeOne, shapeTwo) should be(shapeOne).or(be(shapeTwo))
                 }
             }

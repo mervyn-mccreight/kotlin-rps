@@ -9,7 +9,7 @@ object RPS {
     @JvmStatic
     fun main(args: Array<String>) {
         val rockPlayer: Player = { pickOneOf(ROCK) }
-        val randomPlayer: Player = { pickOneOf(*enumValues()) }
+        val randomPlayer: Player = { pickOneOf(*Shape.entries.toTypedArray()) }
 
         val (win, draw, loss) = playGames(rockPlayer, randomPlayer)
 
