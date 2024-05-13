@@ -9,6 +9,6 @@ jobs:
   dependency-submission:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.4
+      - uses: actions/checkout@v4.1.5
       - uses: gradle/actions/wrapper-validation@v3.3.2
       - uses: gradle/actions/dependency-submission@v3.3.2
