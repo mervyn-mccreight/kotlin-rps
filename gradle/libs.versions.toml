@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.0.0"
-kotest = "5.9.0"
+kotest = "5.9.1"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
