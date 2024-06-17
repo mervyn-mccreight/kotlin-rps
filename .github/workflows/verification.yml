@@ -13,7 +13,7 @@ jobs:
     runs-on: [ "ubuntu-latest" ]
     steps:
       - uses: actions/checkout@v4.1.6
-      - uses: gradle/actions/wrapper-validation@v3.3.2
-      - uses: gradle/actions/setup-gradle@v3.3.2
+      - uses: gradle/actions/wrapper-validation@v3.4.1
+      - uses: gradle/actions/setup-gradle@v3.4.1
       - name: "Run all verifications"
         run: "./gradlew check"
