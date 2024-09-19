@@ -10,6 +10,10 @@ version = "1.0"
 
 kotlin {
     jvmToolchain(22)
+    compilerOptions {
+        allWarningsAsErrors = true
+        progressiveMode = true
+    }
 }
 
 application {
