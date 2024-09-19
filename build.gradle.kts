@@ -9,7 +9,7 @@ group = "de.merv.kata"
 version = "1.0"
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(22)
 }
 
 application {
