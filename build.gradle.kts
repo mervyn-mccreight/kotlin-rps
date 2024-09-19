@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
 plugins {
     alias(libs.plugins.kotlin.jvm)
     application
@@ -14,11 +16,11 @@ application {
     mainClass.set("de.merv.kata.rps.MainKt")
 }
 
-tasks.withType<Test> {
+tasks.withType<Test>().configureEach {
     useJUnitPlatform()
 
     testLogging {
-        events("passed", "skipped", "failed")
+        events(TestLogEvent.PASSED, TestLogEvent.SKIPPED, TestLogEvent.PASSED)
     }
 }
 
