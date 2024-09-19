@@ -13,4 +13,4 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4.1.0
         with:
           cache-read-only: true
-      - uses: gradle-update/update-gradle-wrapper-action@v1.0.20
+      - uses: gradle-update/update-gradle-wrapper-action@v2.0.0
