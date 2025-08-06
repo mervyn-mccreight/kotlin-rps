@@ -9,7 +9,6 @@
     "vscode": {
       "extensions": [
         "fwcd.kotlin",
-        "fwcd.kotlin-debug-adapter",
         "vscjava.vscode-gradle",
         "redhat.java"
       ],
