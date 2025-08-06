@@ -8,11 +8,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "fwcd.kotlin"
-      ],
-      "settings": {
-        "kotlin.experimental.debug.enabled": true
-      }
+        "mathiasfrohlich.kotlin"
+      ]
     }
   },
   "remoteUser": "vscode"
