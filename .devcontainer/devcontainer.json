@@ -5,7 +5,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "kotlin-lsp.vscode-kotlin-lsp",
+        "mathiasfrohlich.kotlin",
         "fwcd.kotlin-debug-adapter",
         "vscjava.vscode-java-pack",
         "vscjava.vscode-gradle",
