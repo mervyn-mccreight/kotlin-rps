@@ -28,7 +28,7 @@
       }
     }
   },
-  "postCreateCommand": "./gradlew --no-daemon compileKotlinTest || true",
+  "postCreateCommand": "./gradlew --no-daemon testClasses || true",
   "updateContentCommand": "./gradlew --refresh-dependencies || true",
   "remoteUser": "vscode"
 }
