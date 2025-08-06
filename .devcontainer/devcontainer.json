@@ -1,6 +1,9 @@
 {
   "name": "Kotlin Gradle DevContainer",
   "image": "mcr.microsoft.com/devcontainers/java:21",
+  "containerEnv": {
+    "JAVA_HOME": "/usr/lib/jvm/msopenjdk-current"
+  },
   "features": {},
   "customizations": {
     "vscode": {
@@ -14,11 +17,11 @@
         "java.configuration.runtimes": [
           {
             "name": "JavaSE-21",
-            "path": "/usr/local/sdkman/candidates/java/current",
+            "path": "/usr/lib/jvm/msopenjdk-current",
             "default": true
           }
         ],
-        "java.import.gradle.java.home": "/usr/local/sdkman/candidates/java/current",
+        "java.import.gradle.java.home": "/usr/lib/jvm/msopenjdk-current",
         "kotlin.experimental.debug.enabled": true
       }
     }
