@@ -16,9 +16,6 @@
       }
     }
   },
-  "containerEnv": {
-    "JAVA_HOME": "/usr/local/sdkman/candidates/java/current"
-  },
   "postCreateCommand": "./gradlew --no-daemon tasks || true",
   "remoteUser": "vscode"
 }
