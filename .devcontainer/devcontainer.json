@@ -1,13 +1,12 @@
 {
-  "name": "Gradle Java DevContainer",
+  "name": "Gradle JDK 24 DevContainer",
   "build": {
     "dockerfile": "Dockerfile"
   },
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
-      "version": "17"
+      "version": "24"
     },
-    "ghcr.io/devcontainers/features/gradle:1": {},
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
@@ -21,14 +20,15 @@
       "settings": {
         "java.configuration.runtimes": [
           {
-            "name": "JavaSE-17",
-            "path": "/usr/lib/jvm/java-17-openjdk"
+            "name": "JavaSE-24",
+            "path": "/usr/local/sdkman/candidates/java/current"
           }
-        ]
+        ],
+        "java.import.gradle.java.home": "/usr/local/sdkman/candidates/java/current"
       }
     }
   },
-  "postCreateCommand": "./gradlew --no-daemon compileKotlin || true",
+  "postCreateCommand": "./gradlew --no-daemon compileKotlinTest || true",
   "updateContentCommand": "./gradlew --refresh-dependencies || true",
   "remoteUser": "vscode"
 }
