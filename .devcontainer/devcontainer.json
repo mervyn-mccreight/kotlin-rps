@@ -1,18 +1,24 @@
 {
+  "name": "Kotlin Gradle DevContainer",
   "image": "mcr.microsoft.com/devcontainers/java:21",
   "features": {},
-  "containerEnv": {
-    "JAVA_HOME": "/usr/lib/jvm/msopenjdk-current/"
-  },
   "customizations": {
     "vscode": {
       "extensions": [
+        "mathiasfrohlich.kotlin",
+        "fwcd.kotlin-debug-adapter",
         "vscjava.vscode-java-pack",
         "vscjava.vscode-gradle",
         "redhat.java"
-      ]
+      ],
+      "settings": {
+        "kotlin.languageServer.trace.server": "verbose"
+      }
     }
   },
-  "postCreateCommand": "./gradlew --no-daemon testClasses || true",
+  "containerEnv": {
+    "JAVA_HOME": "/usr/local/sdkman/candidates/java/current"
+  },
+  "postCreateCommand": "./gradlew --no-daemon tasks || true",
   "remoteUser": "vscode"
 }
