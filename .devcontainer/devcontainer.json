@@ -1,8 +1,5 @@
 {
   "name": "Gradle JDK 24 DevContainer",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
       "version": "24"
@@ -16,19 +13,9 @@
         "vscjava.vscode-java-pack",
         "vscjava.vscode-gradle",
         "redhat.java"
-      ],
-      "settings": {
-        "java.configuration.runtimes": [
-          {
-            "name": "JavaSE-24",
-            "path": "/usr/local/sdkman/candidates/java/current"
-          }
-        ],
-        "java.import.gradle.java.home": "/usr/local/sdkman/candidates/java/current"
-      }
+      ]
     }
   },
   "postCreateCommand": "./gradlew --no-daemon testClasses || true",
-  "updateContentCommand": "./gradlew --refresh-dependencies || true",
   "remoteUser": "vscode"
 }
