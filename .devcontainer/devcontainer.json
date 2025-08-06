@@ -8,19 +8,9 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "fwcd.kotlin",
-        "vscjava.vscode-gradle",
-        "redhat.java"
+        "fwcd.kotlin"
       ],
       "settings": {
-        "java.configuration.runtimes": [
-          {
-            "name": "JavaSE-21",
-            "path": "/usr/lib/jvm/msopenjdk-current",
-            "default": true
-          }
-        ],
-        "java.import.gradle.java.home": "/usr/lib/jvm/msopenjdk-current",
         "kotlin.experimental.debug.enabled": true
       }
     }
