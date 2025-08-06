@@ -2,7 +2,7 @@
   "image": "mcr.microsoft.com/devcontainers/java:21",
   "features": {},
   "containerEnv": {
-    "JAVA_HOME": "/usr/lib/jvm/msopenjdk-current/bin/java"
+    "JAVA_HOME": "/usr/lib/jvm/msopenjdk-current/"
   },
   "customizations": {
     "vscode": {
