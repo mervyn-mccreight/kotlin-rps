@@ -1,0 +1,16 @@
+{
+  "name": "Kotlin Gradle DevContainer",
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+  "containerEnv": {
+    "JAVA_HOME": "/usr/lib/jvm/msopenjdk-current"
+  },
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "mathiasfrohlich.kotlin"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
