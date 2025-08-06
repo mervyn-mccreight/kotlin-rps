@@ -5,17 +5,23 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "mathiasfrohlich.kotlin",
+        "fwcd.kotlin",
         "fwcd.kotlin-debug-adapter",
-        "vscjava.vscode-java-pack",
         "vscjava.vscode-gradle",
         "redhat.java"
       ],
       "settings": {
-        "kotlin.languageServer.trace.server": "verbose"
+        "java.configuration.runtimes": [
+          {
+            "name": "JavaSE-21",
+            "path": "/usr/local/sdkman/candidates/java/current",
+            "default": true
+          }
+        ],
+        "java.import.gradle.java.home": "/usr/local/sdkman/candidates/java/current",
+        "kotlin.experimental.debug.enabled": true
       }
     }
   },
-  "postCreateCommand": "./gradlew --no-daemon tasks || true",
   "remoteUser": "vscode"
 }
