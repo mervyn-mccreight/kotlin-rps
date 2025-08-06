@@ -1,0 +1,6 @@
+{
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:alpine",
+  "features": {
+    "ghcr.io/devcontainers-extra/features/gradle-sdkman:2": {}
+  }
+}
