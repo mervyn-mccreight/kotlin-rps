@@ -1,11 +1,11 @@
 [versions]
 kotlin = "2.2.20"
-kotest = "5.9.1"
+testballoon = "0.6.0-K2.2.0"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-powerassert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "kotlin" }
+testballoon = { id = "de.infix.testBalloon", version.ref = "testballoon" }
 
 [libraries]
-kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
-kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
-kotest-framework-datatest = { module = "io.kotest:kotest-framework-datatest", version.ref = "kotest" }
+testballoon-framework-core = { module = "de.infix.testBalloon:testBalloon-framework-core", version.ref = "testballoon" }

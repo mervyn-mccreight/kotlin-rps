@@ -1,7 +1,10 @@
 import org.gradle.api.tasks.testing.logging.TestLogEvent
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.powerassert)
+    alias(libs.plugins.testballoon)
     application
 }
 
@@ -28,12 +31,15 @@ tasks.withType<Test>().configureEach {
     }
 }
 
+@OptIn(ExperimentalKotlinGradlePluginApi::class)
+powerAssert {
+    functions = listOf("kotlin.assert")
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation(libs.kotest.runner.junit5)
-    testImplementation(libs.kotest.property)
-    testImplementation(libs.kotest.framework.datatest)
+    testImplementation(libs.testballoon.framework.core)
 }
