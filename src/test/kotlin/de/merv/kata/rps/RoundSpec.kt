@@ -1,6 +1,6 @@
 package de.merv.kata.rps
 
-import de.infix.testBalloon.framework.testSuite
+import de.infix.testBalloon.framework.core.testSuite
 import de.merv.kata.rps.Shape.PAPER
 import de.merv.kata.rps.Shape.ROCK
 import de.merv.kata.rps.Shape.SCISSORS
