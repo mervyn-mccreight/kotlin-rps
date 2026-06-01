@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.3.21"
-testballoon = "1.0.0-K2.3.0"
+testballoon = "1.0.0-K2.3.20"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
