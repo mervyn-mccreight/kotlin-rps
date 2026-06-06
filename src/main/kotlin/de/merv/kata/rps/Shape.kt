@@ -5,22 +5,18 @@ enum class Shape {
     PAPER,
     SCISSORS;
 
-    companion object {
-        private val winnersMap = hashMapOf(
-            ROCK to SCISSORS,
-            PAPER to ROCK,
-            SCISSORS to PAPER
-        )
-
-        fun pickOneOf(vararg shapes: Shape): Shape = shapes.toSet().shuffled().first()
+    private val beats: Shape by lazy {
+        when (this) {
+            ROCK -> SCISSORS
+            PAPER -> ROCK
+            SCISSORS -> PAPER
+        }
     }
 
-    infix fun winsAgainst(opponent: Shape): Boolean {
-        val possibleLoser = winnersMap[this]
-        if (possibleLoser != null) {
-            return possibleLoser == opponent
-        }
+    infix fun winsAgainst(opponent: Shape): Boolean =
+        this.beats == opponent
 
-        throw IllegalStateException("Shape is unknown to the rules")
+    companion object {
+        fun pickOneOf(vararg shapes: Shape): Shape = shapes.toSet().shuffled().first()
     }
 }
