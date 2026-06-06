@@ -17,6 +17,7 @@ enum class Shape {
         this.beats == opponent
 
     companion object {
-        fun pickOneOf(vararg shapes: Shape): Shape = shapes.toSet().shuffled().first()
+        fun pickOneOf(vararg shapes: Shape): Shape =
+            shapes.random()
     }
 }
