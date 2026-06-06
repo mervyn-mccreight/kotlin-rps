@@ -6,11 +6,10 @@ object Round {
     private val WIN = Triple(1, 0, 0)
     private val LOSE = Triple(0, 0, 1)
 
-    fun play(contender: Shape, opponent: Shape): Triple<Int, Int, Int> {
-        if (contender == opponent) {
-            return DRAW
+    fun play(contender: Shape, opponent: Shape): Triple<Int, Int, Int> =
+        when {
+            contender == opponent -> DRAW
+            contender winsAgainst opponent -> WIN
+            else -> LOSE
         }
-
-        return if (contender winsAgainst opponent) WIN else LOSE
-    }
 }
