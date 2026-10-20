@@ -12,7 +12,7 @@ group = "de.merv.kata"
 version = "1.0"
 
 kotlin {
-    jvmToolchain(26)
+    jvmToolchain(27)
     compilerOptions {
         allWarningsAsErrors = true
         progressiveMode = true
